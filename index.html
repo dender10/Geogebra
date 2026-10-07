@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fa">
+  <title>GeoGebra — побач математику</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700;750;800&display=swap');
+
+:root{--ink:#232832;--muted:#727782;--purple:#7660db;--line:#e4e6eb;--background:#f8f9fb;--green:#c9eacb}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--background);color:var(--ink);font-family:Manrope,Arial,sans-serif;font-size:14px;line-height:1.65}a{color:inherit;text-decoration:none}button,input{font:inherit}button,a,input{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{outline:3px solid var(--purple);outline-offset:5px}button{color:inherit}.container{max-width:1200px;margin:0 auto;padding-left:32px;padding-right:32px}.header{height:90px;max-width:1376px;padding:0 48px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:25px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:9px;font-size:23px;font-weight:800;letter-spacing:-.9px;white-space:nowrap}.brand svg{width:35px;height:35px;fill:none;stroke:var(--purple);stroke-width:2}.brand svg circle{fill:var(--background)}.brand-divider{width:1px;height:23px;background:#d5d8df;margin:0 7px}.brand-sub{font-size:11px;font-weight:500;letter-spacing:0;color:var(--muted)}nav{display:flex;gap:29px;font-size:12px;font-weight:600}nav a:hover,.text-link:hover,.lab-disclaimer a:hover{color:var(--purple)}.header-link{font-size:12px;font-weight:700;border:1px solid #d9dce2;padding:11px 17px;border-radius:8px}.header-link span{margin-left:13px}.hero{padding-top:83px;padding-bottom:90px;display:grid;grid-template-columns:1.12fr 1fr;align-items:center;gap:45px}.eyebrow{font-size:10px;letter-spacing:1.6px;font-weight:800;display:flex;gap:9px;align-items:center}.status-dot{width:7px;height:7px;border-radius:50%;background:#7d69dc;box-shadow:0 0 0 4px #eeeafa}h1{font-size:clamp(40px,4.25vw,58px);line-height:1.18;letter-spacing:-2.5px;margin:24px 0 24px;font-weight:800}.accent-word{color:var(--purple);position:relative;display:inline-block}.accent-word svg{position:absolute;width:100%;height:15px;left:0;bottom:-10px;fill:none;stroke:#bcaef2;stroke-width:4;stroke-linecap:round}.hero-description{color:var(--muted);font-size:14px;line-height:1.85;margin:29px 0}.hero-actions{display:flex;align-items:center;gap:25px}.button{display:inline-flex;align-items:center;justify-content:center;gap:25px;padding:14px 21px;border-radius:8px;font-size:12px;font-weight:700;border:1px solid transparent;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button-dark{background:var(--ink);color:white}.button-dark:hover{background:#413957}.button span{font-size:18px;line-height:1}.text-link{font-size:12px;font-weight:600}.text-link span{margin-left:9px}.hero-facts{display:flex;gap:17px;font-size:9px;color:var(--muted);margin-top:27px}.hero-facts i{font-style:normal;color:#736298;margin-right:4px}.hero-visual{position:relative;border:1px solid #dfe2e8;background:white;border-radius:14px;box-shadow:0 18px 50px #252e4610;transform:rotate(-2deg);margin-top:20px}.visual-top{padding:17px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ebedf1;font-size:9px;font-weight:700;letter-spacing:1px}.visual-top>span:first-child{display:flex;align-items:center;gap:8px}.purple-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--purple);flex-shrink:0}.window-dots{letter-spacing:4px;color:#c4c7ce;font-size:15px;line-height:1}.hero-plot{position:relative;padding:10px 0 0;overflow:hidden;border-bottom:1px solid #ebedf1}.hero-plot svg{display:block;width:100%}.formula-tag{position:absolute;padding:6px 12px;border:1px solid;border-radius:6px;font-size:11px;background:white;font-weight:700;box-shadow:0 3px 8px #20203308}.tag-parabola{top:14%;right:15%;color:var(--purple);border-color:#e5dcff;transform:rotate(2deg)}.tag-sine{top:64%;left:10%;color:#629680;border-color:#d7e8df;transform:rotate(2deg)}.point-tag{position:absolute;top:61%;left:54%;font-size:9px;color:#969ba5}.visual-bottom{display:flex;gap:8px;align-items:center;padding:14px 20px;font-size:10px;color:#7b8089}.live-dot{width:5px;height:5px;background:#74a78d;border-radius:50%}.small-arrow{margin-left:auto;font-size:17px}.floating-note{position:absolute;bottom:25px;right:-25px;transform:rotate(7deg);background:#e8e1fc;padding:14px 25px 15px 43px;border-radius:9px;border:1px solid #d7ccf7;box-shadow:0 5px 15px #3e2b7720;font-size:11px;line-height:1.7}.floating-note>span{position:absolute;top:15px;left:17px;font-size:20px;color:#866ccd}.topic-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#f1f3f6}.topic-strip .container{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:18px;padding-bottom:18px}.topic-strip span{font-size:9px;letter-spacing:1.2px;color:#7e8490;font-weight:700}.topic-strip p{display:flex;align-items:center;gap:28px;margin:0;font-size:12px;font-weight:600}.topic-strip i{font-size:16px;font-style:normal;color:#aa9bd4}.section{padding-top:75px;padding-bottom:75px}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-bottom:33px}.muted{color:#858996}h2{font-size:31px;line-height:1.35;letter-spacing:-1.1px;margin:12px 0 0;font-weight:800}.section-heading>p{color:var(--muted);font-size:12px;line-height:1.9;margin:0 0 3px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{position:relative;background:white;border:1px solid var(--line);padding:26px;border-radius:11px}.feature-icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:11px;font-size:28px}.purple{background:#eee9fb;color:#8a70da}.green{background:#eaf3ed;color:#72a088}.peach{background:#fcf0e7;color:#bc9273}.feature-number{position:absolute;right:26px;top:30px;color:#c1c5ce;font-size:11px}h3{font-size:16px;letter-spacing:-.4px;line-height:1.5;margin:22px 0 10px;font-weight:800}.feature p{color:var(--muted);font-size:12px;line-height:1.9;margin:0 0 27px}.feature-label{font-size:8px;letter-spacing:1.2px;font-weight:700;color:#959aa5}.lab-section{background:#eef0f5;padding:65px 0 35px;border-block:1px solid #e6e8ef}.lab{display:grid;grid-template-columns:300px 1fr;min-height:450px;border:1px solid #dadde7;border-radius:12px;background:white;overflow:hidden;box-shadow:0 9px 25px #2c355008}.lab-controls{padding:26px;border-right:1px solid var(--line);background:#fcfcfe}.control-title{display:flex;align-items:center;gap:7px;font-size:9px;letter-spacing:1.1px;font-weight:800}.mini-badge{margin-left:auto;color:#8a78c9;background:#eeebf8;border-radius:4px;font-size:8px;padding:2px 5px;letter-spacing:.6px}.function-tabs{display:flex;background:#f0f1f5;border-radius:6px;padding:3px;gap:2px;margin-top:23px}.function-tabs button{flex:1;border:0;padding:8px 4px;border-radius:4px;background:transparent;font-size:10px;color:#8b8e99}.function-tabs button.active{background:white;color:var(--purple);font-weight:800;box-shadow:0 1px 4px #1f284012}.equation{font-size:22px;letter-spacing:-.7px;margin:23px 0 27px;font-weight:700}.equation span{color:var(--purple)}.slider-control{margin:20px 0}.slider-control label{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#808591}.slider-control label b{font-weight:700;color:var(--ink)}output{min-width:34px;text-align:center;background:#eeebf8;padding:2px 7px;border-radius:4px;color:var(--purple);font-size:11px;font-weight:700}input[type=range]{width:100%;height:5px;margin:16px 0 10px;accent-color:var(--purple);cursor:pointer}.range-labels{display:flex;justify-content:space-between;font-size:9px;color:#a1a5ae}.insight{display:flex;gap:9px;background:#f0edf9;border-radius:7px;padding:12px;margin-top:21px;color:#83729f}.insight>span{font-size:19px}.insight p{font-size:10px;line-height:1.8;margin:0}.reset-button{background:none;border:0;color:#8b8d99;font-size:15px;padding:14px 0 0;display:flex;gap:8px;align-items:center}.reset-button span{font-size:10px}.graph-area{min-width:0;display:flex;flex-direction:column}.graph-toolbar{display:flex;justify-content:space-between;align-items:center;padding:17px 21px;border-bottom:1px solid #eceef3;font-size:10px}.graph-toolbar>span:first-child{display:flex;align-items:center;gap:7px;font-weight:700}.graph-scale{color:#a1a5ae;font-size:9px}#graph{display:block;width:100%;height:365px;flex:1;min-height:300px;touch-action:pan-y}.graph-bottom{display:flex;justify-content:space-between;padding:12px 21px;border-top:1px solid #eceef3;font-size:9px;color:#9b9fa9}.graph-bottom>span:first-child{color:#8b78be;font-weight:600}.graph-bottom>span:last-child>span{padding-left:10px}.lab-disclaimer{text-align:center;font-size:9px;color:#9499a5;margin:20px 0 0}.lab-disclaimer a{margin-left:6px;color:#837799}.demo-section{display:grid;grid-template-columns:.9fr 1.2fr;gap:80px;align-items:start}.demo-intro h2{font-size:35px;margin-top:17px;line-height:1.3}.demo-intro>p{color:var(--muted);font-size:13px;line-height:1.9;margin:18px 0 25px}.button-outline{border-color:#d7dae2;background:white;gap:30px}.demo-steps article{display:flex;gap:18px;padding-bottom:21px;margin-bottom:21px;border-bottom:1px solid var(--line)}.step-number{display:flex;justify-content:center;align-items:center;border:1px solid #dcd5ef;color:#8b78b5;border-radius:50%;height:29px;width:29px;flex-shrink:0;font-size:11px;margin-top:3px}.demo-steps h3{margin:0 0 7px;font-size:14px}.demo-steps p{margin:0;color:var(--muted);font-size:12px;line-height:1.85}code{color:#8067b8;background:#ede9f6;border-radius:4px;padding:2px 5px;font-size:11px;white-space:nowrap}.pro-tip{display:flex;gap:12px;padding:13px 17px;background:#f0edf8;border:1px solid #e5dff2;border-radius:8px}.pro-tip>span{font-size:24px;color:#9a83c7}.pro-tip p{font-size:11px;color:#86759e}.challenge{display:grid;grid-template-columns:1.3fr 1fr;background:#e9e2f5;border:1px solid #ded5ed;border-radius:13px;padding:37px 43px;gap:30px}.challenge .eyebrow{color:#8c79ab}.challenge h2{font-size:30px;margin-top:14px}.challenge-copy>p{font-size:13px;color:#7c6b92;margin:16px 0 19px}.challenge-copy strong{color:#5d477c}.quiz-answers{display:flex;gap:9px}.quiz-answers button{padding:9px 16px;border-radius:6px;background:#f5f1fb;border:1px solid #d9ceeb;font-size:11px;font-weight:600;transition:background .2s}.quiz-answers button:hover{background:white}.quiz-answers button.correct{background:#e3f1e1;border-color:#9fc49b;color:#3a683a}.quiz-answers button.incorrect{background:#f4e0e3;border-color:#ce9fa9;color:#965365}.challenge-copy .quiz-feedback{font-size:11px;margin:12px 0 0;min-height:36px}.challenge-side{border-left:1px solid #d9cfe8;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-left:25px}.challenge-symbol{width:65px;height:65px;display:flex;align-items:center;justify-content:center;background:#f2edf8;border:1px solid #daceec;border-radius:20px;transform:rotate(10deg);font-size:38px;color:#9781bf;font-weight:500;margin-bottom:19px}.challenge-time{font-size:8px;color:#8b799e;letter-spacing:1.1px}.challenge-side p{font-size:14px;font-weight:700;margin:10px 0 19px}.challenge-side .button{font-size:10px;padding:12px 16px;gap:17px}.takeaway{display:grid;grid-template-columns:1fr 1fr;gap:90px}.takeaway h2{font-size:29px}.takeaway-lead{font-size:13px;color:var(--muted);line-height:1.95;margin:19px 0 0}.takeaway-notes article{display:flex;gap:15px;margin-bottom:26px}.note-icon{display:flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:8px;background:#efedf5;color:#9b8db4;flex-shrink:0;font-size:21px}.takeaway-notes h3{margin:0 0 7px;font-size:13px}.takeaway-notes p{font-size:11px;line-height:1.9;margin:0;color:var(--muted)}.closing{padding-top:37px;padding-bottom:39px;text-align:center;background:#eef0f4;border:1px solid var(--line);border-radius:12px}.closing-icon{color:#a89acb;font-size:26px}.closing h2{font-size:32px;margin:10px 0 24px}.closing .button{font-size:11px}.closing>p{font-size:10px;color:#9196a1;margin:16px 0 0}footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;padding-top:35px;padding-bottom:25px;margin-top:25px!important}.footer-brand{font-size:18px}.footer-star{color:#a69ac2;font-size:17px;margin-left:8px}footer>span,footer>a:last-of-type{font-size:10px;color:#9499a5}footer>p{flex-basis:100%;font-size:9px;color:#a7abb4;margin:0;border-top:1px solid var(--line);padding-top:15px}
+@media(min-width:1400px){.hero{padding-top:95px;padding-bottom:100px}}@media(max-width:1050px){.header{padding:0 30px}.brand-sub,.brand-divider{display:none}.hero{gap:25px}.hero-facts{gap:9px;font-size:8px}.floating-note{right:-12px}.topic-strip p{gap:15px;font-size:10px}.topic-strip span{font-size:8px}.demo-section{gap:45px}.takeaway{gap:45px}h1{font-size:45px}.hero-actions{gap:15px}.hero-actions .button{font-size:11px;padding:13px 15px}.text-link{font-size:11px}}
+@media(max-width:780px){.header{height:74px;padding:0 22px}.brand{font-size:21px}nav{gap:16px;font-size:10px}.header-link{display:none}.container{padding-left:24px;padding-right:24px}.hero{grid-template-columns:1fr;padding-top:45px;padding-bottom:55px;gap:30px}.hero-copy{max-width:550px}h1{font-size:49px}.hero-description{font-size:14px}.hero-facts{font-size:9px;gap:16px}.hero-visual{max-width:500px;width:94%;justify-self:center}.hero-actions .button{font-size:12px;padding:14px 19px}.topic-strip .container{justify-content:center}.topic-strip span{display:none}.topic-strip p{gap:15px;font-size:10px}.section{padding-top:48px;padding-bottom:48px}.section-heading{align-items:start;flex-direction:column;gap:14px}h2{font-size:27px}.section-heading>p{font-size:12px}.feature-grid{gap:12px}.feature{padding:19px}.feature-number{right:19px;top:24px}.feature h3{font-size:13px}.feature p{font-size:11px;margin-bottom:18px}.feature-label{font-size:7px;letter-spacing:.6px}.lab-section{padding-top:45px}.lab{grid-template-columns:240px 1fr}.lab-controls{padding:20px}.graph-scale{display:none}.graph-toolbar{padding:15px}.equation{font-size:21px}.graph-bottom{padding:12px}.graph-bottom>span:last-child{display:none}.demo-section{gap:25px;grid-template-columns:.8fr 1.2fr}.demo-intro h2{font-size:29px}.demo-intro .button{font-size:10px;gap:15px;padding:12px}.challenge{margin-inline:24px;padding:27px;grid-template-columns:1.3fr 1fr}.challenge h2{font-size:25px}.quiz-answers{gap:5px;flex-wrap:wrap}.quiz-answers button{padding:8px 11px;font-size:10px}.challenge-side{padding-left:20px}.challenge-side .button{gap:10px;font-size:9px}.takeaway{gap:30px}.takeaway h2{font-size:26px}.closing{margin-inline:24px}.closing h2{font-size:28px}}
+@media(max-width:540px){.header{padding:0 18px}nav a:first-child{display:none}nav{gap:15px}.brand{font-size:20px}.brand svg{width:28px;height:28px}.container{padding-left:20px;padding-right:20px}.hero{padding-top:35px}h1{font-size:40px;letter-spacing:-1.8px}.eyebrow{font-size:8px;letter-spacing:1.3px}.hero-description{font-size:12px}.hero-actions{gap:18px}.hero-actions .button{font-size:10px;padding:13px}.text-link{font-size:10px}.hero-facts{gap:9px;font-size:7px}.floating-note{font-size:9px;padding:11px 16px 11px 35px;bottom:16px;right:-10px}.floating-note>span{left:12px;top:12px;font-size:16px}.visual-top{font-size:8px;padding:12px 15px}.visual-bottom{font-size:9px;padding:11px 15px}.formula-tag{font-size:9px;padding:4px 8px}.topic-strip p{font-size:9px;gap:11px;flex-wrap:wrap;justify-content:center}.topic-strip p i:last-of-type,.topic-strip p i:last-of-type+*{display:none}.feature-grid{grid-template-columns:1fr}.feature{padding:23px}.feature h3{font-size:16px;margin-top:16px}.feature p{font-size:12px}.feature-label{font-size:8px}.feature-number{top:28px;right:24px}.feature-icon{height:38px;width:38px}.section-heading{margin-bottom:25px}h2{font-size:25px}.lab{grid-template-columns:1fr}.lab-controls{border-right:0;border-bottom:1px solid var(--line);padding:20px}.function-tabs{margin-top:14px}.equation{margin:16px 0;font-size:23px}.slider-control{margin:15px 0}.insight{margin-top:15px}.reset-button{padding-top:12px}.graph-toolbar{padding:13px 16px}.graph-scale{display:block;font-size:8px}#graph{height:310px;min-height:310px;flex:none}.graph-bottom{padding:12px 16px}.lab-disclaimer{font-size:9px;line-height:1.9}.lab-disclaimer a{display:block;margin:3px 0 0}.demo-section{grid-template-columns:1fr;gap:30px}.demo-intro>p br{display:none}.demo-intro h2 br{display:none}.demo-intro h2{font-size:27px}.demo-intro .button{font-size:11px;padding:12px 17px}.demo-steps article{gap:14px}.challenge{margin-inline:20px;padding:25px;grid-template-columns:1fr;gap:24px}.challenge h2{font-size:26px}.challenge-side{border-left:0;border-top:1px solid #d9cfe8;padding-left:0;padding-top:23px}.challenge-symbol{width:48px;height:48px;font-size:28px;margin-bottom:15px}.challenge-side .button{font-size:11px;gap:20px}.quiz-answers button{font-size:11px;padding:10px 15px}.takeaway{grid-template-columns:1fr;gap:27px}.takeaway-notes article:last-child{margin-bottom:0}.takeaway-notes p{font-size:12px}.closing{margin-inline:20px;padding:28px 18px}.closing h2{font-size:26px}.closing .button{font-size:10px;gap:16px}footer>span{font-size:8px}footer{gap:12px}footer>a:last-of-type{font-size:9px}footer>p{font-size:8px}.desktop-break{display:none}}
+.arrow-icon{width:14px;height:14px;display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}.feature-icon .arrow-icon{width:25px;height:25px}.header-link .arrow-icon{width:12px;height:12px}.quiz-answers .arrow-icon{width:12px;height:12px;margin-right:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#home" aria-label="На початок"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 11C22 0 39 16 29 29S0 28 10 11Z"/><circle cx="10" cy="11" r="3"/><circle cx="29" cy="29" r="3"/><circle cx="32" cy="12" r="3"/><circle cx="7" cy="27" r="3"/></svg>GeoGebra<span class="brand-divider"></span><span class="brand-sub">Математика наживо</span></a>
+    <nav aria-label="Основна навігація"><a href="#about">Про сервіс</a><a href="#playground">Спробувати</a><a href="#challenge">Завдання класу</a></nav>
+    <a class="header-link" href="https://www.geogebra.org/graphing" target="_blank" rel="noopener noreferrer">Відкрити GeoGebra <span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></span></a>
+  </header>
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> ТВОЯ МАТЕМАТИЧНА ЛАБОРАТОРІЯ</div>
+        <h1>Не просто формули.<br>Математика, яку<br>можна <span class="accent-word">побачити.<svg viewBox="0 0 350 16" aria-hidden="true"><path d="M3 10Q150-3 345 8"/></svg></span></h1>
+        <p class="hero-description">Перетвори рівняння на графік, рухай повзунки<br class="desktop-break"> й відкривай закономірності разом із GeoGebra.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#playground">Погратися з графіком <span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></span></a><a class="text-link" href="#about">Що це за сервіс? <span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12m-4-4 4 4 4-4"/></svg></span></a></div>
+        <div class="hero-facts"><span><i>✓</i> Безкоштовні інструменти</span><span><i>✓</i> Працює у браузері</span><span><i>✓</i> Навчайся досліджуючи</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-top"><span><i class="purple-dot"></i> ГРАФІЧНИЙ КАЛЬКУЛЯТОР</span><span class="window-dots">•••</span></div>
+        <div class="hero-plot"><svg id="hero-graph" viewBox="0 0 540 350" role="img" aria-label="Графіки параболи та синусоїди на координатній площині"></svg><div class="formula-tag tag-parabola">f(x) = x²</div><div class="formula-tag tag-sine">g(x) = sin(x)</div><div class="point-tag">A (0, 0)</div></div>
+        <div class="visual-bottom"><span class="live-dot"></span> Одна формула. Безліч відкриттів.<span class="small-arrow"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></span></div>
+        <div class="floating-note"><span>✦</span> Зміни параметр.<br><strong>Побач різницю.</strong></div>
+      </div>
+    </section>
+    <div class="topic-strip"><div class="container"><span>ВІД ІДЕЇ ДО РОЗУМІННЯ</span><p>Графіки функцій <i>✦</i> Інтерактивні досліди <i>✦</i> Візуальна математика <i>✦</i> Власні відкриття</p></div></div>
+
+    <section class="section container" id="about">
+      <div class="section-heading"><div><div class="eyebrow muted">01 / ЗНАЙОМСТВО</div><h2>Твій помічник у світі функцій.</h2></div><p>GeoGebra — платформа для вивчення математики,<br class="desktop-break"> яка поєднує алгебру, геометрію та графіки.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><div class="feature-icon purple">⌁</div><span class="feature-number">01</span><h3>Побач те, що обчислюєш</h3><p>Будуй графіки функцій, знаходь їхні нулі та точки перетину. Зрозумій, що стоїть за символами в зошиті.</p><span class="feature-label">ВІД ФОРМУЛИ ДО ГРАФІКА</span></article>
+        <article class="feature"><div class="feature-icon green">⇆</div><span class="feature-number">02</span><h3>Досліджуй, а не зазубрюй</h3><p>Змінюй коефіцієнти повзунками й одразу бач зміни. Перевіряй припущення та знаходь закономірності самостійно.</p><span class="feature-label">НАВЧАННЯ ЧЕРЕЗ ЕКСПЕРИМЕНТ</span></article>
+        <article class="feature"><div class="feature-icon peach"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></div><span class="feature-number">03</span><h3>Почни за кілька секунд</h3><p>Відкрий калькулятор у браузері на комп’ютері чи телефоні. Для побудови першого графіка реєстрація не потрібна.</p><span class="feature-label">ДОСТУПНО Й БЕЗКОШТОВНО</span></article>
+      </div>
+    </section>
+
+    <section class="lab-section" id="playground"><div class="container">
+      <div class="section-heading"><div><div class="eyebrow muted">02 / ІНТЕРАКТИВНА ЛАБОРАТОРІЯ</div><h2>А що, якщо змінити формулу?</h2></div><p>Обери функцію та посунь повзунки.<br>Графік відповість миттєво.</p></div>
+      <div class="lab">
+        <aside class="lab-controls">
+          <div class="control-title"><span class="purple-dot"></span> ТВОЯ ФУНКЦІЯ <span class="mini-badge">LIVE</span></div>
+          <div class="function-tabs" role="group" aria-label="Тип функції"><button class="active" data-function="quadratic" aria-pressed="true">Парабола</button><button data-function="linear" aria-pressed="false">Пряма</button><button data-function="sine" aria-pressed="false">Синусоїда</button></div>
+          <div class="equation" id="equation">f(x) = <span>1</span>x² + <span>0</span></div>
+          <div class="slider-control"><label for="a"><span>Коефіцієнт <b>a</b></span><output id="a-value" for="a">1</output></label><input id="a" type="range" min="-3" max="3" step="0.1" value="1"><div class="range-labels"><span>−3</span><span>0</span><span>3</span></div></div>
+          <div class="slider-control"><label for="b"><span>Зсув <b>b</b></span><output id="b-value" for="b">0</output></label><input id="b" type="range" min="-4" max="4" step="0.1" value="0"><div class="range-labels"><span>−4</span><span>0</span><span>4</span></div></div>
+          <div class="insight"><span>✦</span><p id="insight">Коли a > 0, гілки параболи дивляться вгору. Збільш a — і парабола стане вужчою.</p></div>
+          <button class="reset-button" id="reset">↺ <span>Скинути параметри</span></button>
+        </aside>
+        <div class="graph-area"><div class="graph-toolbar"><span><i class="purple-dot"></i> <span id="graph-name">Квадратична функція</span></span><span class="graph-scale">1 клітинка = 1 одиниця</span></div><canvas id="graph" tabindex="0" role="img" aria-label="Інтерактивний графік функції f(x) = x²"></canvas><div class="graph-bottom"><span id="graph-caption">Вершина: (0; 0)</span><span>Наведи курсор на графік <span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></span></span></div></div>
+      </div>
+      <p class="lab-disclaimer">Це власна мінілабораторія за ідеєю GeoGebra. <a href="https://www.geogebra.org/graphing" target="_blank" rel="noopener noreferrer">Дослідити більше в оригінальному сервісі <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></a></p>
+    </div></section>
+
+    <section class="section container demo-section" id="demo">
+      <div class="demo-intro"><div class="eyebrow muted">03 / ДЕМОНСТРАЦІЯ СЕРВІСУ</div><h2>Три кроки.<br>І формула оживає.</h2><p>Покажи класу, як це працює<br>у справжньому GeoGebra.</p><a class="button button-outline" href="https://www.geogebra.org/graphing" target="_blank" rel="noopener noreferrer">Відкрити калькулятор <span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></span></a></div>
+      <div class="demo-steps"><article><span class="step-number">1</span><div><h3>Введи свою першу функцію</h3><p>Відкрий графічний калькулятор. У рядку введення напиши <code>f(x) = x^2</code> та натисни Enter.</p></div></article><article><span class="step-number">2</span><div><h3>Додай можливість експериментувати</h3><p>Введи <code>a = 1</code>, а потім <code>g(x) = a*x^2</code>. Увімкни повзунок для a та змінюй значення.</p></div></article><article><span class="step-number">3</span><div><h3>Знайди точку зустрічі</h3><p>Додай <code>y = 4</code>. Вибери інструмент «Перетин» і клацни параболу та пряму: для f(x) отримаєш (−2; 4) та (2; 4).</p></div></article><div class="pro-tip"><span>✧</span><p><strong>Корисна функція:</strong> анімуй повзунок a через його меню. Графік змінюватиметься сам — спостерігай, як «дихає» парабола.</p></div></div>
+    </section>
+
+    <section class="container challenge" id="challenge"><div class="challenge-copy"><div class="eyebrow">04 / ВИКЛИК ДЛЯ КЛАСУ</div><h2>Спочатку припущення.<br>Потім — перевірка.</h2><p>Маємо функцію <strong>f(x) = −2x² + 3</strong>.<br>Куди спрямовані гілки її параболи?</p><div class="quiz-answers" role="group" aria-label="Варіанти відповіді"><button data-answer="up"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg> Вгору</button><button data-answer="down"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4 12 12M4 12h8V4"/></svg> Вниз</button><button data-answer="right"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12m-4-4 4 4-4 4"/></svg> Праворуч</button></div><p class="quiz-feedback" id="quiz-feedback" aria-live="polite">Обери відповідь — і перевір свою інтуїцію.</p></div><div class="challenge-side"><div class="challenge-symbol">?</div><span class="challenge-time">⏱ 30 СЕКУНД НА ВІДКРИТТЯ</span><p>А де знаходиться вершина?</p><button id="show-challenge" class="button button-dark">Перевірити в лабораторії <span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></span></button></div></section>
+
+    <section class="section container takeaway"><div><div class="eyebrow muted">05 / ВАРТО ЗНАТИ</div><h2>Інструмент для розуміння.</h2><p class="takeaway-lead">Рекомендуємо GeoGebra учням, які вивчають функції, готуються до контрольної або хочуть перевірити власний розв’язок. Учителям — для наочних пояснень і дослідів на уроці.</p></div><div class="takeaway-notes"><article><span class="note-icon"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4 12 12M4 12h8V4"/></svg></span><div><h3>Є й обмеження</h3><p>Графік не замінює доведення. Масштаб може приховати деталі, а для роботи онлайн потрібен інтернет. Спочатку розв’яжи задачу сам, потім перевір.</p></div></article><article><span class="note-icon">✧</span><div><h3>Навчайся ефективно й безпечно</h3><p>Перед зміною параметра спробуй передбачити результат. Користуйся офіційним сайтом geogebra.org і не публікуй особисті дані в навчальних матеріалах.</p></div></article></div></section>
+    <section class="closing container"><span class="closing-icon">✦</span><h2>Твій наступний «ага!» —<br>за один графік звідси.</h2><a class="button button-dark" href="https://www.geogebra.org/graphing" target="_blank" rel="noopener noreferrer">Почати дослідження в GeoGebra <span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></span></a><p>Менше зазубрювання. Більше відкриттів.</p></section>
+  </main>
+  <footer class="container"><a class="brand footer-brand" href="#home">GeoGebra<span class="footer-star">✦</span></a><span>Навчальний проєкт · Графіки та функції</span><a href="https://www.geogebra.org" target="_blank" rel="noopener noreferrer">Офіційний сайт <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></a><p>Незалежний навчальний сайт. Не є офіційним сайтом GeoGebra.</p></footer>
+  <script>
+const $ = (selector) => document.querySelector(selector);
+const canvas = $('#graph');
+const ctx = canvas.getContext('2d');
+const aInput = $('#a');
+const bInput = $('#b');
+let mode = 'quadratic';
+let pointer = null;
+let geometry = {};
+const number = value => Math.abs(value) < 0.001 ? '0' : String(Math.round(value * 100) / 100).replace('-', '−');
+const evaluate = (x, a, b) => mode === 'quadratic' ? a * x * x + b : mode === 'linear' ? a * x + b : a * Math.sin(x) + b;
+
+function drawHero() {
+  const svg = $('#hero-graph');
+  let content = '';
+  for (let x = 0; x <= 540; x += 30) content += `<path d="M${x} 0V350" stroke="#eef0f5"/>`;
+  for (let y = 0; y <= 350; y += 30) content += `<path d="M0 ${y}H540" stroke="#eef0f5"/>`;
+  content += '<path d="M0 210H535M270 350V7" stroke="#b8bfcc" stroke-width="1.2"/><path d="m530 206 5 4-5 4M266 12l4-5 4 5" fill="none" stroke="#b8bfcc"/><text x="521" y="229" font-size="11" fill="#a1a7b4">x</text><text x="281" y="18" font-size="11" fill="#a1a7b4">y</text>';
+  for (let i = -8; i <= 8; i += 2) if (i) content += `<text x="${270 + i * 30}" y="228" font-family="Arial" font-size="9" text-anchor="middle" fill="#a5acb9">${i}</text>`;
+  for (let i = -4; i <= 6; i += 2) if (i) content += `<text x="257" y="${214 - i * 30}" font-family="Arial" font-size="9" text-anchor="end" fill="#a5acb9">${i}</text>`;
+  const path = fn => Array.from({length:541}, (_,i) => `${i ? 'L' : 'M'}${i},${210 - fn((i-270)/30)*30}`).join(' ');
+  content += `<path d="${path(x=>x*x)}" fill="none" stroke="#8a6de0" stroke-width="3"/><path d="${path(x=>Math.sin(x))}" fill="none" stroke="#7baf98" stroke-width="2.5"/><circle cx="270" cy="210" r="5" fill="#8a6de0" stroke="white" stroke-width="2"/>`;
+  svg.innerHTML = content;
+}
+
+function drawGraph() {
+  const rect = canvas.getBoundingClientRect();
+  const width = rect.width, height = rect.height;
+  if (!width || !height) return;
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = Math.round(width * dpr);
+  canvas.height = Math.round(height * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const scale = Math.min(width / 14, height / 10);
+  const ox = width / 2, oy = height / 2;
+  geometry = {width, height, scale, ox, oy};
+  ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, width, height);
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = '#edf0f5';
+  ctx.beginPath();
+  for (let i = -Math.ceil(width / scale / 2); i <= width / scale / 2; i++) {const x=ox+i*scale;ctx.moveTo(x,0);ctx.lineTo(x,height);}
+  for (let i = -Math.ceil(height / scale / 2); i <= height / scale / 2; i++) {const y=oy+i*scale;ctx.moveTo(0,y);ctx.lineTo(width,y);}
+  ctx.stroke();
+  ctx.strokeStyle = '#b5bdcb'; ctx.beginPath();ctx.moveTo(0,oy);ctx.lineTo(width-8,oy);ctx.moveTo(ox,height);ctx.lineTo(ox,8);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(width-13,oy-3);ctx.lineTo(width-8,oy);ctx.lineTo(width-13,oy+3);ctx.moveTo(ox-3,13);ctx.lineTo(ox,8);ctx.lineTo(ox+3,13);ctx.stroke();
+  ctx.font='10px Manrope, Arial';ctx.fillStyle='#929bab';ctx.textAlign='center';
+  for(let i=-Math.floor(width/scale/2)+1;i<width/scale/2;i++)if(i)ctx.fillText(number(i),ox+i*scale,oy+17);
+  ctx.textAlign='right';
+  for(let i=-Math.floor(height/scale/2)+1;i<height/scale/2;i++)if(i)ctx.fillText(number(i),ox-10,oy-i*scale+3);
+  ctx.fillText('0',ox-9,oy+17);ctx.fillText('x',width-13,oy-10);ctx.fillText('y',ox+16,16);
+  const a=Number(aInput.value), b=Number(bInput.value);
+  ctx.save();ctx.beginPath();ctx.rect(0,0,width,height);ctx.clip();ctx.strokeStyle='#8264d9';ctx.lineWidth=2.8;ctx.lineJoin='round';ctx.beginPath();
+  for(let px=0;px<=width;px++){const y=oy-evaluate((px-ox)/scale,a,b)*scale;px===0?ctx.moveTo(px,y):ctx.lineTo(px,y);}ctx.stroke();
+  const py=oy-b*scale;
+  ctx.beginPath();ctx.arc(ox,py,5,0,Math.PI*2);ctx.fillStyle='#8264d9';ctx.fill();ctx.strokeStyle='white';ctx.lineWidth=2;ctx.stroke();
+  if(pointer !== null){
+    const x=(pointer-ox)/scale, y=evaluate(x,a,b), screenY=oy-y*scale;
+    if(screenY>=0 && screenY<=height){
+      ctx.setLineDash([4,4]);ctx.lineWidth=1;ctx.strokeStyle='#c4b5e9';ctx.beginPath();ctx.moveTo(pointer,oy);ctx.lineTo(pointer,screenY);ctx.lineTo(ox,screenY);ctx.stroke();ctx.setLineDash([]);
+      ctx.beginPath();ctx.arc(pointer,screenY,5,0,Math.PI*2);ctx.fillStyle='#8264d9';ctx.fill();ctx.strokeStyle='white';ctx.stroke();
+      const label=`(${number(x)}; ${number(y)})`;ctx.font='11px Manrope, Arial';const tw=ctx.measureText(label).width+20;
+      const tx=Math.min(Math.max(pointer+12,4),width-tw-4),ty=Math.max(4,Math.min(screenY-35,height-30));
+      ctx.fillStyle='#f0ebfa';ctx.fillRect(tx,ty,tw,25);ctx.fillStyle='#7358ba';ctx.textAlign='left';ctx.fillText(label,tx+10,ty+17);
+    }
+  }
+  ctx.restore();
+}
+
+function update() {
+  const a=Number(aInput.value), b=Number(bInput.value);
+  $('#a-value').textContent=number(a);$('#b-value').textContent=number(b);
+  const term=mode==='quadratic'?'x²':mode==='linear'?'x':'sin(x)';
+  const expression=`${number(a)}${term} ${b<0?'−':'+'} ${number(Math.abs(b))}`;
+  $('#equation').innerHTML=`f(x) = <span>${number(a)}</span>${term} ${b<0?'−':'+'} <span>${number(Math.abs(b))}</span>`;
+  canvas.setAttribute('aria-label',`Графік функції f(x) = ${expression}`);
+  const names={quadratic:'Квадратична функція',linear:'Лінійна функція',sine:'Синусоїда'};
+  $('#graph-name').textContent=a===0?'Стала функція':names[mode];
+  if(a===0){$('#insight').textContent='Коли a = 0, функція стала: f(x) = b. Її графік — горизонтальна пряма.';$('#graph-caption').textContent=`Стала функція: y = ${number(b)}`;}
+  else if(mode==='quadratic'){
+    $('#insight').textContent=`Коли a ${a>0?'>':'<'} 0, гілки параболи дивляться ${a>0?'вгору':'вниз'}. Що більше |a|, то вужча парабола. Параметр b зміщує її по вертикалі.`;
+    $('#graph-caption').textContent=`Вершина: (0; ${number(b)})`;
+  }else if(mode==='linear'){
+    $('#insight').textContent=`Коефіцієнт a задає нахил: пряма ${a>0?'зростає':'спадає'}. Параметр b — це координата перетину з віссю y.`;
+    $('#graph-caption').textContent=`Перетин з віссю y: (0; ${number(b)})`;
+  }else{
+    $('#insight').textContent='Амплітуда хвилі дорівнює |a|, а b зміщує її вгору або вниз. Від’ємне a віддзеркалює хвилю відносно лінії y = b.';
+    $('#graph-caption').textContent=`Амплітуда: ${number(Math.abs(a))} · Період: 2π`;
+  }
+  drawGraph();
+}
+
+function selectMode(next) {
+  mode=next;
+  document.querySelectorAll('[data-function]').forEach(button=>{const active=button.dataset.function===mode;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
+  update();
+}
+document.querySelectorAll('[data-function]').forEach(button=>button.addEventListener('click',()=>selectMode(button.dataset.function)));
+aInput.addEventListener('input',update);bInput.addEventListener('input',update);
+$('#reset').addEventListener('click',()=>{aInput.value=1;bInput.value=0;pointer=null;update();});
+canvas.addEventListener('pointermove',event=>{pointer=event.clientX-canvas.getBoundingClientRect().left;drawGraph();});
+canvas.addEventListener('pointerleave',()=>{pointer=null;drawGraph();});
+canvas.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();pointer=Math.max(0,Math.min(geometry.width,(pointer??geometry.ox)+(event.key==='ArrowRight'?1:-1)*geometry.scale/4));drawGraph();}});
+document.querySelectorAll('[data-answer]').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('[data-answer]').forEach(answer=>answer.classList.remove('correct','incorrect'));
+  const correct=button.dataset.answer==='down';button.classList.add(correct?'correct':'incorrect');
+  $('#quiz-feedback').textContent=correct?'Так! a = −2 < 0, тому гілки спрямовані вниз. А вершина — у точці (0; 3).':'Спробуй ще раз: знак коефіцієнта біля x² визначає напрям гілок. Тут a = −2.';
+}));
+$('#show-challenge').addEventListener('click',()=>{aInput.value=-2;bInput.value=3;pointer=null;selectMode('quadratic');$('#playground').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
+new ResizeObserver(drawGraph).observe(canvas);
+drawHero();update();
+document.fonts.ready.then(drawGraph);
+
+  </script>
+</body>
+</html>
